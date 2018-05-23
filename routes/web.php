@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('backend.layouts.master');
+});
+Route::get('/login', function () {
+    return view('backend.login');
 });

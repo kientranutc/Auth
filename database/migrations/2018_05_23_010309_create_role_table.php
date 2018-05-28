@@ -21,7 +21,6 @@ class CreateRoleTable extends Migration
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *

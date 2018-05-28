@@ -17,7 +17,7 @@
                                         <div class="col-md-3 col-md-offset-7" >
                                             <div class="form-group text-right">
                                                 <label class="label-checkbox">
-                                                    <input type="checkbox">
+                                                    <input type="checkbox" id="check-all">
                                                     <span class="custom-checkbox"></span>
                                                     Is_admin
                                                 </label>
@@ -43,7 +43,7 @@
                                     <div class="col-md-3">
                                         <div class="form-group text-left">
                                             <label class="label-checkbox">
-                                                <input type="checkbox" name=permission[] {{(in_array($key,$arrRole['permission']))?"checked":""}} data-key="{{$key}}" value="{{$key}}">
+                                                <input type="checkbox" name=permission[] {{(in_array($key,$arrRole['permission']))?"checked":""}} class="check-role-all" id="role-{{$key}}" data-key="{{$key}}"value="{{$key}}">
                                                 <span class="custom-checkbox"></span>
                                                 {{$item['title']}}
                                             </label>
@@ -52,7 +52,7 @@
                                             @foreach($item['child'] as $k=>$v)
                                                 <div class="form-group">
                                                     <label class="label-checkbox">
-                                                        <input type="checkbox"  {{(in_array($k,$arrRole['permission']))?"checked":""}} class="{{$key}}-child" data-count="{{count($item['child'])}}" name="permission[]" value="{{$k}}">
+                                                        <input type="checkbox"  {{(in_array($k,$arrRole['permission']))?"checked":""}}  class="role-child {{$key}}-permission-child"  data-key="{{$key}}" data-count="{{count($item['child'])}}" name="permission[]" value="{{$k}}">
                                                         <span class="custom-checkbox"></span>
                                                         {{$v}}
                                                     </label>
@@ -68,4 +68,7 @@
             </div>
         </form>
     </div>
+@stop
+@section('script')
+    <script src="{{asset('backend/js/role/checkbox.js')}}"></script>
 @stop

@@ -52,4 +52,14 @@ class RoleController extends Controller
 
         }
     }
+
+    public function  delete($id)
+    {
+        $role = $this->role->find($id);
+        if ($role) {
+
+        } else {
+            return redirect()->route('role.index')->withErrors("Error delete role");
+        }
+    }
 }

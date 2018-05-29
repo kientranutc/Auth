@@ -15,7 +15,9 @@ class RoleController extends Controller
 
     public function  index()
     {
-        return view('backend.role.index');
+        $dataRole = $this->role->all();
+        $stt = 0;
+        return view('backend.role.index', compact('stt', 'dataRole'));
     }
 
     public function  add()

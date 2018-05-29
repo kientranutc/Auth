@@ -2,11 +2,15 @@
 
 @section('content')
     <div class="padding-md">
+
         <form method="post" action="{{URL::route('role.add-post')}}">
             {{csrf_field()}}
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
+                    <div class="panel-heading clearfix">
+                        <a href="{{URL::route('role.index')}}" class="btn btn-success"><i class="fa fa-reply fa-lg"></i> Go Back</a>
+                    </div><!-- /page-title -->
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-6">
@@ -19,17 +23,18 @@
                                             <label class="label-checkbox">
                                                 <input type="checkbox" id="check-all">
                                                 <span class="custom-checkbox"></span>
-                                                Is_admin
+                                                Administrator
                                             </label>
                                         </div><!-- /form-group -->
                                     </div>
                                     <div class="col-md-2 text-right">
-                                        <button type="submit" class="btn btn-success btn-sm ">Save</button>
+                                        <button type="submit" class="btn btn-success btn-sm "> <i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="panel-body">
 
                             <div class="form-group">
@@ -44,7 +49,7 @@
                             @foreach(config('constant.permission') as $key=>$item)
                                 <div class="col-md-3">
                                     <div class="form-group text-left">
-                                        <label class="label-checkbox">
+                                        <label class="label-checkbox" style="color: darkgreen; font-weight: bold">
                                             <input type="checkbox" name=permission[] class="check-role-all" id="role-{{$key}}" data-key="{{$key}}" value="{{$key}}">
                                             <span class="custom-checkbox"></span>
                                             {{$item['title']}}

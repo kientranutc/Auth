@@ -2,7 +2,7 @@ $(document).ready(function () {
     $(document).on('change', '.role-child', function () {
        var count = $(this).data('count');
         var key = $(this).data('key');
-        var checkBoxlength = $('.'+key+'-child:checked').length;
+        var checkBoxlength = $('.'+key+'-permission-child:checked').length;
        if(count==checkBoxlength) {
         $('#role-'+key).prop('checked', true);
        } else {

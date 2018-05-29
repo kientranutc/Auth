@@ -12,6 +12,7 @@
 
     <!-- Font Awesome -->
     <link href="{{asset('backend/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{asset('backend/css/jquery.dataTables_themeroller.css')}}" rel="stylesheet">
 
     <!-- Pace -->
     <link href="{{asset('backend/css/pace.css')}}" rel="stylesheet">
@@ -353,6 +354,7 @@
 <!-- Morris -->
 <script src="{{asset('backend/js/rapheal.min.js')}}"></script>
 <script src="{{asset('backend/js/morris.min.js')}}"></script>
+<script src="{{asset('backend/js/jquery.dataTables.min.js')}}"></script>
 
 <!-- Colorbox -->
 <script src="{{asset('backend/js/jquery.colorbox.min.js')}}"></script>

@@ -36,10 +36,10 @@
                     </div>
 
                     <div class="panel-body">
-
-                            <div class="form-group">
+                            <div class="form-group {{($errors->has('name'))?'has-error':''}}">
                                 <label for="role-name">Name</label>
                                 <input type="text" class="form-control input-sm" name="name" id="role-name" placeholder="Role Name">
+                                <p class="text-danger"> {{$errors->first('name')}}</p>
                             </div><!-- /form-group -->
 
                     </div>

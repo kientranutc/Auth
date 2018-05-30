@@ -268,9 +268,7 @@
             </li>
         </ul>
     </div><!-- /top-nav-->
-
         @include('backend.partials.sidebar')
-
     <div id="main-container">
         <div id="breadcrumb">
             <ul class="breadcrumb">
@@ -280,6 +278,7 @@
         </div><!-- /breadcrumb-->
 
         <div class="padding-md">
+            @include('backend.partials.message')
             @yield('content')
         </div><!-- /.padding-md -->
     </div><!-- /main-container -->

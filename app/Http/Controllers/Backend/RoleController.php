@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Http\Requests\CreateRoleRequest;
+use App\Http\Requests\UpdateRoleRequest;
 use App\Repositories\Role\RoleRepositoryInterface;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -25,12 +27,12 @@ class RoleController extends Controller
         return view('backend.role.add');
     }
 
-    public  function processAdd(Request $request) {
+    public  function processAdd(CreateRoleRequest $request) {
         $dataRequest = $request->except(['_token']);
         if ($this->role->save($dataRequest) ){
-            return redirect()->route('role.index');
+            return redirect()->route('role.index')-> with('success', 'Add role successfully');
         } else {
-
+            return redirect()->back()->withErrors("Error add role");
         }
     }
 
@@ -43,21 +45,20 @@ class RoleController extends Controller
         return view('backend.role.update', compact('arrRole'));
     }
 
-    public function  processUpdate(Request $request, $id)
+    public function  processUpdate(UpdateRoleRequest $request, $id)
     {
         $dataRequest = $request->except(['_token']);
         if ($this->role->update($dataRequest, $id) ){
-            return redirect()->route('role.index');
+            return redirect()->route('role.index')-> with('success', 'Update role successfully');
         } else {
-
+            return redirect()->back()->withErrors("Error update role");
         }
     }
 
     public function  delete($id)
     {
-        $role = $this->role->find($id);
-        if ($role) {
-
+        if ($this->role->delete($id)) {
+            return redirect()->route('role.index')-> with('success', 'Delete role successfully');
         } else {
             return redirect()->route('role.index')->withErrors("Error delete role");
         }

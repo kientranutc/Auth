@@ -50,7 +50,12 @@ class RoleRepository implements  RoleRepositoryInterface
 
     public  function  delete($id)
     {
-
+        $role =Role::find($id);
+        if ($role) {
+            return $role->delete();
+        } else {
+            return false;
+        }
     }
 }
 ?>

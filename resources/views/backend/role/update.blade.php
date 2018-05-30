@@ -46,7 +46,7 @@
                                     <div class="col-md-3">
                                         <div class="form-group text-left">
                                             <label class="label-checkbox" style="color: darkgreen; font-weight: bold">
-                                                <input type="checkbox" name=permission[]{{(!empty($arrRole['permission']) && in_array($key,$arrRole['permission']))?"checked":""}}  class="check-role-all" id="role-{{$key}}" data-key="{{$key}}"value="{{$key}}">
+                                                <input type="checkbox" name="permission[]" {{(!empty($arrRole['permission']) && in_array($key,$arrRole['permission']))?"checked":""}}  class="check-role-all" id="role-{{$key}}" data-key="{{$key}}"value="{{$key}}">
                                                 <span class="custom-checkbox"></span>
                                                 {{$item['title']}}
                                             </label>

@@ -42,5 +42,9 @@ Route::prefix('admin')->group(function () {
             'as' => 'role.update-post',
             'uses' => 'Backend\RoleController@processUpdate'
         ]);
+        Route::get('delete/{id}',[
+            'as' => 'role.delete',
+            'uses' => 'Backend\RoleController@delete'
+        ]);
     });
 });

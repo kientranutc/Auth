@@ -33,7 +33,7 @@
                                 <td class="text-center">{{$item->created_at}}</td>
                                 <td class="text-center">
                                     <a class="btn btn-success" href="{{URL::route('role.update',$item->id)}}"><i class="fa fa-edit fa-lg"></i> Edit</a>
-                                    <a class="btn btn-danger" onclick="return confirm('Do you want to delete item?')" href="{{URL::route('role.update',$item->id)}}"><i class="fa fa-edit fa-lg"></i> Delete</a>
+                                    <a class="btn btn-danger" onclick="return confirm('Do you want to delete item?')" href="{{URL::route('role.delete',$item->id)}}"><i class="fa fa-edit fa-lg"></i> Delete</a>
                                 </td>
                             </tr>
                         @empty

@@ -7,6 +7,8 @@ interface  UserRepositoryInterface
 
     public function  find($id);
 
+    public  function  findUserOfRole($id);
+
     public function  save($data);
 
     public function  update($data, $id);

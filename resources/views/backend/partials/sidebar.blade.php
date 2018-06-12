@@ -41,149 +41,31 @@
                         <span class="menu-hover"></span>
                     </a>
                 </li>
-                <li class="openable {{(Route::currentRouteName()=='role.index'?'active':'')}}">
+                <li class="openable {{(Route::currentRouteName()=='role.index')
+                                     ||(Route::currentRouteName()=='role.add')
+                                     ||(Route::currentRouteName()=='role.update')
+                                     ||(Route::currentRouteName()=='user.index')
+                                     ||(Route::currentRouteName()=='user.add')
+                                     ||(Route::currentRouteName()=='user.update')
+                                        ?'active':''}}">
                     <a href="#">
 								<span class="menu-icon">
 									<i class="fa fa-file-text fa-lg"></i>
 								</span>
                         <span class="text">
-									setting
+									Controll Admin
 								</span>
                         <span class="menu-hover"></span>
                     </a>
                     <ul class="submenu">
-                        <li class =" {{(Route::currentRouteName()=='role.index'?'active':'')}}"><a href="{{URL::route('role.index')}}"><span class="submenu-label">Role</span></a></li>
-                        <li><a href="register.html"><span class="submenu-label">Sign up</span></a></li>
-                    </ul>
-                </li>
-                <li class="openable ">
-                    <a href="#">
-								<span class="menu-icon">
-									<i class="fa fa-tag fa-lg"></i>
-								</span>
-                        <span class="text">
-									Component
-								</span>
-                        <span class="badge badge-success bounceIn animation-delay5">9</span>
-                        <span class="menu-hover"></span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="ui_element.html"><span class="submenu-label">UI Features</span></a></li>
-                        <li><a href="button.html"><span class="submenu-label">Button & Icons</span></a></li>
-                        <li><a href="tab.html"><span class="submenu-label">Tab</span></a></li>
-                        <li><a href="nestable_list.html"><span class="submenu-label">Nestable List</span></a></li>
-                        <li><a href="calendar.html"><span class="submenu-label">Calendar</span></a></li>
-                        <li><a href="table.html"><span class="submenu-label">Table</span></a></li>
-                        <li><a href="widget.html"><span class="submenu-label">Widget</span></a></li>
-                        <li><a href="form_element.html"><span class="submenu-label">Form Element</span></a></li>
-                        <li><a href="form_wizard.html"><span class="submenu-label">Form Wizard</span></a></li>
+                        <li class="{{(Route::currentRouteName()=='user.index'?'active':'')}}"><a href="{{URL::route('user.index')}}"> <span class="submenu-label"><i class="fa fa-user fa-lg"></i> User</span></a></li>
+                        <li class =" {{(Route::currentRouteName()=='role.index'?'active':'')}}"><a href="{{URL::route('role.index')}}"><span class="submenu-label"><i class="fa fa-user-plus fa-lg"></i> Role</span></a></li>
+
                     </ul>
                 </li>
 
-                <li>
-                    <a href="timeline.html">
-								<span class="menu-icon">
-									<i class="fa fa-clock-o fa-lg"></i>
-								</span>
-                        <span class="text">
-									Timeline
-								</span>
-                        <span class="menu-hover"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="gallery.html">
-								<span class="menu-icon">
-									<i class="fa fa-picture-o fa-lg"></i>
-								</span>
-                        <span class="text">
-									Gallery
-								</span>
-                        <span class="menu-hover"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="inbox.html">
-								<span class="menu-icon">
-									<i class="fa fa-envelope fa-lg"></i>
-								</span>
-                        <span class="text">
-									Inbox
-								</span>
-                        <span class="badge badge-danger bounceIn animation-delay6">4</span>
-                        <span class="menu-hover"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="email_selection.html">
-								<span class="menu-icon">
-									<i class="fa fa-tasks fa-lg"></i>
-								</span>
-                        <span class="text">
-									Email Template
-								</span>
-                        <small class="badge badge-warning bounceIn animation-delay7">New</small>
-                        <span class="menu-hover"></span>
-                    </a>
-                </li>
-                <li class="openable">
-                    <a href="#">
-								<span class="menu-icon">
-									<i class="fa fa-magic fa-lg"></i>
-								</span>
-                        <span class="text">
-									Multi-Level menu
-								</span>
-                        <span class="menu-hover"></span>
-                    </a>
-                    <ul class="submenu">
-                        <li class="openable">
-                            <a href="#">
-                                <span class="submenu-label">menu 2.1</span>
-                                <span class="badge badge-danger bounceIn animation-delay1 pull-right">3</span>
-                            </a>
-                            <ul class="submenu third-level">
-                                <li><a href="#"><span class="submenu-label">menu 3.1</span></a></li>
-                                <li><a href="#"><span class="submenu-label">menu 3.2</span></a></li>
-                                <li class="openable">
-                                    <a href="#">
-                                        <span class="submenu-label">menu 3.3</span>
-                                        <span class="badge badge-danger bounceIn animation-delay1 pull-right">2</span>
-                                    </a>
-                                    <ul class="submenu fourth-level">
-                                        <li><a href="#"><span class="submenu-label">menu 4.1</span></a></li>
-                                        <li><a href="#"><span class="submenu-label">menu 4.2</span></a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="openable">
-                            <a href="#">
-                                <span class="submenu-label">menu 2.2</span>
-                                <span class="badge badge-success bounceIn animation-delay2 pull-right">3</span>
-                            </a>
-                            <ul class="submenu third-level">
-                                <li class="openable">
-                                    <a href="#">
-                                        <span class="submenu-label">menu 3.1</span>
-                                        <span class="badge badge-success bounceIn animation-delay1 pull-right">2</span>
-                                    </a>
-                                    <ul class="submenu fourth-level">
-                                        <li><a href="#"><span class="submenu-label">menu 4.1</span></a></li>
-                                        <li><a href="#"><span class="submenu-label">menu 4.2</span></a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#"><span class="submenu-label">menu 3.2</span></a></li>
-                                <li><a href="#"><span class="submenu-label">menu 3.3</span></a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+
             </ul>
-
-            <div class="alert alert-info">
-                Welcome to Endless Admin. Do not forget to check all my pages.
-            </div>
         </div><!-- /main-menu -->
     </div><!-- /sidebar-inner -->
 </aside>

@@ -25,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
     {
         $repositories = [
             'Role\RoleRepositoryInterface' => 'Role\RoleRepository',
+            'User\UserRepositoryInterface' => 'User\UserRepository',
+            'UserRole\UserRoleRepositoryInterface' => 'UserRole\UserRoleRepository',
         ];
         foreach ($repositories as $key=>$val){
            $this->app->bind("App\\Repositories\\$key", "App\\Repositories\\$val");

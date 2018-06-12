@@ -21,6 +21,7 @@ Route::get('/login', function () {
 
 //--------------------------------Backend---------------------------------------
 Route::prefix('admin')->group(function () {
+    //role
     Route::prefix('role')->group(function () {
         Route::get('',[
             'as' => 'role.index',
@@ -45,6 +46,33 @@ Route::prefix('admin')->group(function () {
         Route::get('delete/{id}',[
             'as' => 'role.delete',
             'uses' => 'Backend\RoleController@delete'
+        ]);
+    });
+    //user
+    Route::prefix('user')->group(function () {
+        Route::get('',[
+            'as' => 'user.index',
+            'uses' => 'Backend\UserController@index'
+        ]);
+        Route::get('/add',[
+            'as' => 'user.add',
+            'uses' => 'Backend\UserController@add'
+        ]);
+        Route::post('add',[
+            'as' => 'user.add-post',
+            'uses' => 'Backend\UserController@processAdd'
+        ]);
+        Route::get('/update/{id}',[
+            'as' => 'user.update',
+            'uses' => 'Backend\UserController@update'
+        ]);
+        Route::post('update/{id}',[
+            'as' => 'user.update-post',
+            'uses' => 'Backend\UserController@processUpdate'
+        ]);
+        Route::get('/delete/{id}',[
+            'as' => 'user.delete',
+            'uses' => 'Backend\UserController@delete'
         ]);
     });
 });
